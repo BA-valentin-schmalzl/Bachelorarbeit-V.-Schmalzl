@@ -14,8 +14,8 @@ import heapq
 
 df = pd.read_excel(os.path.join(os.getcwd(), 'shuffled_file.xlsx'),
                    dtype={'Filename': str, 'Schadensbeschreibung': str, 'Schadensklasse': str})
-img_path = 'C:/Users/dsugfsukgh/Documents/01_Bachelorarbeit/GFM_Pump_Bearbeitung/alle_bilder/'
-save_model_path = os.path.join(os.getcwd(), 'Saved_models/', '09_img_Arbeit_X/')
+img_path = 'Ordner mit allen Bildern welche in der Excel-Datei genannt werden'
+save_model_path = os.path.join(os.getcwd(), 'Ordner in dem die gesammelten Daten gespeichert werden')
 datagen = ImageDataGenerator(preprocessing_function=preprocess_input, rescale=1./255,
                              rotation_range=0,
                              width_shift_range=0.2,
