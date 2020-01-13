@@ -9,13 +9,13 @@ import matplotlib.pyplot as plt
 
 df = pd.read_csv('Pfad zur csv-Datei mit den Bildnamen und zugehörigen Klassen.csv', delimiter=';')
 print(df)
-columns = ["Metallschaden"]
+columns = ["Überschrift der Spalte mit den Schadensklassen"]
 datagen = ImageDataGenerator(preprocessing_function=preprocess_input)
 test_datagen = ImageDataGenerator(preprocessing_function=preprocess_input)
 train_generator = datagen.flow_from_dataframe(
     dataframe=df[:550],
     directory="Ordner mit allen Bildern",
-    x_col="Filenames",
+    x_col="Überschrift der Spalte mit den Dateinamen",
     y_col=columns,
     batch_size=25,
 
@@ -25,7 +25,7 @@ train_generator = datagen.flow_from_dataframe(
 validation_generator = test_datagen.flow_from_dataframe(
     dataframe=df[550:650],
     directory="Ordner mit allen Bildern",
-    x_col="Filenames",
+    x_col="Überschrift der Spalte mit den Dateinamen",
     y_col=columns,
     batch_size=32,
 
@@ -35,7 +35,7 @@ validation_generator = test_datagen.flow_from_dataframe(
 test_generator = test_datagen.flow_from_dataframe(
     dataframe=df[650:],
     directory="Ordner mit allen Bildern",
-    x_col="Filenames",
+    x_col="Überschrift der Spalte mit den Dateinamen",
     batch_size=1,
 
     shuffle=False,
