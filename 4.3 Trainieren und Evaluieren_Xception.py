@@ -61,8 +61,8 @@ while i < num_slices:
     train_generator = datagen.flow_from_dataframe(
         dataframe=df_train,
         directory=img_path,
-        x_col="Filename",
-        y_col="Schadensklasse",
+        x_col="Überschrift der Spalte mit den Dateinamen",
+        y_col="Überschrift der Spalte mit den Schadensklassen",
         classes=['Klasse 1', 'Klasse 2', 'Klasse 3', 'Klasse 4', 'Klasse 5'],
         batch_size=67,
         shuffle=False,
@@ -71,8 +71,8 @@ while i < num_slices:
     validation_generator = test_datagen.flow_from_dataframe(
         dataframe=df_val,
         directory=img_path,
-        x_col="Filename",
-        y_col="Schadensklasse",
+        x_col="Überschrift der Spalte mit den Dateinamen",
+        y_col="Überschrift der Spalte mit den Schadensklassen",
         classes=['Klasse 1', 'Klasse 2', 'Klasse 3', 'Klasse 4', 'Klasse 5'],
         batch_size=10,
         shuffle=False,
@@ -81,8 +81,8 @@ while i < num_slices:
     test_generator = test_datagen.flow_from_dataframe(
         dataframe=df_test,
         directory=img_path,
-        x_col="Filename",
-        y_col="Schadensklasse",
+        x_col="Überschrift der Spalte mit den Dateinamen",
+        y_col="Überschrift der Spalte mit den Schadensklassen",
         classes=['Klasse 1', 'Klasse 2', 'Klasse 3', 'Klasse 4', 'Klasse 5'],
         batch_size=9,
         shuffle=False,
