@@ -14,7 +14,7 @@ from keras.utils import plot_model
 
 df = pd.read_csv('Pfad zur Excel-Datei mit den Bildnamen und zugehörigen Klassen.csv', delimiter=';')
 print(df)
-columns = ["Betonschaden"]
+columns = ["Überschrift der Spalte mit den Schadensklassen"]
 datagen = ImageDataGenerator(preprocessing_function=preprocess_input,
                              rotation_range=40,
                              width_shift_range=0.2,
